@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying header.
+ * The template for displaying the header
+ *
+ * This is the template that displays all of the <head> section, opens the <body> tag and adds the site's header.
  *
  * @package HelloElementor
  */
@@ -8,35 +10,21 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-$site_name = get_bloginfo( 'name' );
-$tagline   = get_bloginfo( 'description', 'display' );
 ?>
-<header class="site-header" role="banner">
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<?php $viewport_content = apply_filters( 'hello_elementor_viewport_content', 'width=device-width, initial-scale=1' ); ?>
+	<meta name="viewport" content="<?php echo esc_attr( $viewport_content ); ?>">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
 
-	<div class="site-branding">
-		<?php
-		if ( has_custom_logo() ) {
-			the_custom_logo();
-		} elseif ( $site_name ) {
-			?>
-			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( 'Home', 'hello-elementor' ); ?>" rel="home">
-					<?php echo esc_html( $site_name ); ?>
-				</a>
-			</h1>
-			<p class="site-description">
-				<?php
-				if ( $tagline ) {
-					echo esc_html( $tagline );
-				}
-				?>
-			</p>
-		<?php } ?>
-	</div>
+<?php
+hello_elementor_body_open();
 
-	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-	<nav class="site-navigation" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'menu-1' ) ); ?>
-	</nav>
-	<?php endif; ?>
-</header>
+if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {
+	get_template_part( 'template-parts/header' );
+}
