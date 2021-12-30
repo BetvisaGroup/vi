@@ -1,0 +1,40 @@
+From your Wordpress Admin Panel:
+
+1, Install the "Base-Theme" - hello-elementor.2.3.0.zip
+Navigate to - Apperance - Add New - Locate the them from your harddrive - Activate 
+
+
+2, Download and Install the Elmentor plugin (Free)
+https://wordpress.org/plugins/elementor/
+
+And the Premium addons (Free)
+https://premiumaddons.com/carousel-widget-for-elementor-page-builder/
+
+Elementor – Header, Footer & Blocks Template
+https://wordpress.org/plugins/header-footer-elementor/
+
+3, IMPORT PAGE TEMPLATES
+Navigate to - Templates - Saved Template and Click "Import Template With Images" in the top.
+Import all the template files one by one from the "Page-Templates" folder.
+
+
+4, IMPORT HEADER AND FOOTER TEMPLATES
+Navigate to - Tools - Import  - WordPress - Run Importer.
+Select the file from "Header and Footer-Templates"
+This will install all the header and fotter section. You may have to update the logo image file
+using the elementor panel on the frontend of your website.
+
+
+5, IMPORT CONTENT
+Navigate to - Tools - Import  - WordPress - Run Importer. 
+Select the file in the "Content" folder.
+This will install all the pages and the navigation.
+
+
+(If your theme is using a background image)
+6, SETUP UP THE BACKGROUND 
+Edit anypage with elementor - Click Hamburger Icon - Site Settings 
+Select the background.jpg as background and a background color.
+
+* Remember to set your homepage as startpage (Settings - Reading select "A static page" and the Homepage from the dropdown)
+* Remeber to setup your menu (Appearance - Menus and drag the pages to the default menu)
